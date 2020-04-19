@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ld46_main.wav-6f03a77ba7dee3dac82f5b04655f77d6.sample"
+
+[deps]
+
+source_file="res://audio/ld46_main.wav"
+dest_files=[ "res://.import/ld46_main.wav-6f03a77ba7dee3dac82f5b04655f77d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

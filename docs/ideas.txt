@@ -1,0 +1,16 @@
+Keep it alive
+--------------
+
+- Lead a NPC through a level by giving instructions (typing instructions, moving obstacles, etc)
+	- provide directions before they start moving
+- Keep a rally (tennis) alive
+	- pickups/obstacles
+	- speed increases
+
+
+
+- a garden
+	- keep the bugs away from the flowers
+	- water - plants die if not watered fast enough
+	- sun/shade - certain flowers do better in certain environments
+	- win condition: get a certain number of plants picked

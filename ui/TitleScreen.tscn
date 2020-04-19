@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/TitleScreen.gd" type="Script" id=1]
+
+[node name="TitleScreen" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 520.0
+margin_bottom = 280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 14.0
+text = "Game TItle"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOptions" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 400.0
+margin_bottom = 182.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer/MenuOptions"]
+margin_top = 38.0
+margin_right = 400.0
+margin_bottom = 58.0
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/MenuOptions"]
+margin_top = 62.0
+margin_right = 400.0
+margin_bottom = 82.0
+text = "Quit"
+
+[node name="MusicCheck" type="CheckButton" parent="VBoxContainer/MenuOptions"]
+margin_top = 86.0
+margin_right = 400.0
+margin_bottom = 126.0
+text = "Music"
+
+[node name="VersionLabel" type="Label" parent="VBoxContainer"]
+margin_top = 186.0
+margin_right = 400.0
+margin_bottom = 200.0
+text = "ver 1.0.0"
+
+[node name="ErrorPopup" type="Popup" parent="VBoxContainer"]
+margin_top = 440.0
+margin_right = 784.0
+margin_bottom = 440.0
+
+[node name="Label" type="Label" parent="VBoxContainer/ErrorPopup"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Error message here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/MenuOptions/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuOptions/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuOptions/MusicCheck" to="." method="_on_MusicCheck_pressed"]
