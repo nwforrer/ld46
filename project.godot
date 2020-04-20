@@ -18,17 +18,35 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://player/Player.gd"
+}, {
+"base": "Area2D",
+"class": "SeedBag",
+"language": "GDScript",
+"path": "res://tools/FlowerSeedBag.gd"
+}, {
+"base": "Area2D",
+"class": "Tool",
+"language": "GDScript",
+"path": "res://tools/Tool.gd"
+}, {
+"base": "Area2D",
+"class": "WateringCan",
+"language": "GDScript",
+"path": "res://tools/WateringCan.gd"
 } ]
 _global_script_class_icons={
 "Crop": "",
-"Player": ""
+"Player": "",
+"SeedBag": "",
+"Tool": "",
+"WateringCan": ""
 }
 
 [application]
 
 config/name="ld46"
 run/main_scene="res://ui/TitleScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://tools/flower_seed_bag.png"
 
 [autoload]
 
@@ -37,8 +55,8 @@ Signals="*res://autoloads/Signals.gd"
 
 [display]
 
-window/size/width=640
-window/size/height=360
+window/size/width=320
+window/size/height=180
 window/size/test_width=960
 window/size/test_height=540
 window/stretch/mode="2d"
@@ -84,6 +102,7 @@ move_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
  ]
 }
 move_right={
@@ -96,6 +115,7 @@ move_up={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
 move_down={
@@ -112,6 +132,7 @@ pickup_tool={
 use_tool={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 
@@ -125,6 +146,7 @@ use_tool={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/2d/use_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

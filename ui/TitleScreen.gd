@@ -1,8 +1,8 @@
-extends MarginContainer
+extends Control
 
-onready var error_popup = $VBoxContainer/ErrorPopup
-onready var error_label =  $VBoxContainer/ErrorPopup/Label
-onready var music_check = $VBoxContainer/MenuOptions/MusicCheck
+onready var error_popup = $MarginContainer/VBoxContainer/ErrorPopup
+onready var error_label =  $MarginContainer/VBoxContainer/ErrorPopup/Label
+onready var music_check = $MarginContainer/VBoxContainer/HBoxContainer/MenuOptions/MusicCheck
 
 
 func _ready() -> void:
@@ -23,3 +23,7 @@ func _on_QuitButton_pressed() -> void:
 
 func _on_MusicCheck_pressed() -> void:
 	Options.music = music_check.pressed
+
+
+func _on_TutorialButton_pressed() -> void:
+	get_tree().change_scene("res://Tutorial.tscn")

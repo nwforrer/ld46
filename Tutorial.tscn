@@ -1,20 +1,25 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://ui/PauseMenu.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://fonts/RedHatDisplay-Medium.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://world/tiles.tres" type="TileSet" id=3]
-[ext_resource path="res://ui/HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://audio/Music.tscn" type="PackedScene" id=5]
-[ext_resource path="res://ui/GameOverScreen.tscn" type="PackedScene" id=6]
-[ext_resource path="res://world/highlight.png" type="Texture" id=7]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/arrow.png" type="Texture" id=4]
+[ext_resource path="res://fonts/RedHatDisplay-MediumItalic.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Tutorial.gd" type="Script" id=6]
 [ext_resource path="res://world/Bush.tscn" type="PackedScene" id=9]
 [ext_resource path="res://tools/FlowerSeedBag.tscn" type="PackedScene" id=10]
-[ext_resource path="res://audio/plant.wav" type="AudioStream" id=11]
 [ext_resource path="res://tools/WateringCan.tscn" type="PackedScene" id=12]
 
-[node name="Main" type="Node2D"]
-script = ExtResource( 2 )
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 2 )
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -23,15 +28,7 @@ cell_y_sort = true
 format = 1
 tile_data = PoolIntArray( 0, 1610612737, 2, 1, 1, 1, 2, 1, 1, 3, 1, 1, 4, 1, 1, 5, 1, 1, 6, 1, 1, 7, 1, 1, 8, 1, 1, 9, 1, 1, 10, 1, 1, 11, 1, 1, 12, 1, 1, 13, 1, 1, 14, 1, 1, 15, 1, 1, 16, 1, 1, 17, 1, 1, 18, 1, 1, 19, 1, 2, 65536, 1610612737, 0, 65537, 0, 1, 65538, 0, 65536, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 1, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 1, 65554, 0, 0, 65555, 1, 0, 131072, 1610612737, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 1, 131076, 0, 0, 131077, 0, 1, 131078, 0, 1, 131079, 0, 0, 131080, 0, 1, 131081, 0, 65536, 131082, 0, 0, 131083, 0, 0, 131084, 0, 1, 131085, 0, 0, 131086, 0, 0, 131087, 0, 1, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 1, 0, 196608, 1610612737, 0, 196609, 0, 1, 196610, 0, 65536, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 1, 196618, 0, 1, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 1, 196623, 0, 0, 196624, 0, 65536, 196625, 0, 1, 196626, 0, 1, 196627, 1, 0, 262144, 1610612737, 0, 262145, 0, 1, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 1, 262152, 0, 0, 262153, 0, 1, 262154, 0, 0, 262155, 0, 65536, 262156, 0, 1, 262157, 0, 1, 262158, 0, 1, 262159, 0, 1, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 1, 0, 327680, 1610612737, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 65536, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 1, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 1, 327694, 0, 1, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 1, 0, 393216, 1610612737, 0, 393217, 0, 0, 393218, 0, 1, 393219, 0, 0, 393220, 0, 1, 393221, 0, 0, 393222, 0, 65536, 393223, 0, 0, 393224, 0, 0, 393225, 0, 65536, 393226, 0, 0, 393227, 0, 0, 393228, 0, 65536, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 1, 393234, 0, 0, 393235, 1, 0, 458752, 1610612737, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 1, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 1, 458763, 0, 0, 458764, 0, 0, 458765, 0, 1, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 1, 458770, 0, 0, 458771, 1, 0, 524288, 1610612737, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 1, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 1, 0, 589824, 1610612737, 0, 589825, 0, 0, 589826, 0, 65536, 589827, 0, 1, 589828, 0, 0, 589829, 0, 1, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 65536, 589835, 0, 0, 589836, 0, 0, 589837, 0, 65536, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 1, 0, 655360, 1610612737, 2, 655361, 1, 1, 655362, 1, 1, 655363, 1, 1, 655364, 1, 1, 655365, 1, 1, 655366, 1, 1, 655367, 1, 1, 655368, 1, 1, 655369, 1, 1, 655370, 1, 1, 655371, 1, 1, 655372, 1, 1, 655373, 1, 1, 655374, 1, 1, 655375, 1, 1, 655376, 1, 1, 655377, 1, 1, 655378, 1, 1, 655379, 1, 2, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 1, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
 
-[node name="HighlightSprite" type="Sprite" parent="."]
-position = Vector2( 169.916, 135.009 )
-texture = ExtResource( 7 )
-centered = false
-
 [node name="YSort" type="YSort" parent="."]
-
-[node name="Player" parent="YSort" instance=ExtResource( 8 )]
-position = Vector2( 271.685, 130.898 )
 
 [node name="WateringCan" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 133.985, 134.684 )
@@ -46,27 +43,70 @@ position = Vector2( 98.6592, 74.8106 )
 [node name="Bush" parent="YSort/Bushes" instance=ExtResource( 9 )]
 position = Vector2( 39.6899, 121.03 )
 
+[node name="TutorialSteps" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="TutorialSteps"]
+margin_left = 135.281
+margin_top = 63.471
+margin_right = 231.281
+margin_bottom = 85.471
+custom_fonts/font = SubResource( 2 )
+text = "1. Pickup Seeds ('E')
+Use 'Space' or 'Left Mouse Button' to plant"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Step1" type="Sprite" parent="TutorialSteps"]
+position = Vector2( 123.699, 75.0533 )
+rotation = 4.71239
+texture = ExtResource( 4 )
+
+[node name="Label2" type="Label" parent="TutorialSteps"]
+margin_left = 170.955
+margin_top = 107.484
+margin_right = 284.955
+margin_bottom = 154.484
+custom_fonts/font = SubResource( 2 )
+text = "2. Pickup watering can ('E')
+Use 'Space' or 'Left Mouse Button' to water.
+ *Keep plants watered*"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="TutorialSteps"]
+margin_left = 107.484
+margin_top = 12.5089
+margin_right = 221.484
+margin_bottom = 59.5089
+custom_fonts/font = SubResource( 2 )
+text = "When timer runs out, game is over"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Step2" type="Sprite" parent="TutorialSteps"]
+position = Vector2( 160.299, 133.428 )
+rotation = 4.71239
+texture = ExtResource( 4 )
+
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="UI" instance=ExtResource( 1 )]
-visible = false
-
-[node name="HUD" parent="UI" instance=ExtResource( 4 )]
-margin_left = 1.29413
-margin_top = 4.52946
-margin_right = 1.29413
-margin_bottom = 4.52946
-
-[node name="GameOverScreen" parent="UI" instance=ExtResource( 6 )]
-pause_mode = 2
-visible = false
-
-[node name="Music" parent="." instance=ExtResource( 5 )]
-pause_mode = 2
-autoplay = false
-
-[node name="PlantSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
-[connection signal="resume" from="UI/PauseMenu" to="." method="_on_PauseMenu_resume"]
-[connection signal="countdown_complete" from="UI/HUD" to="." method="_on_HUD_countdown_complete"]
-[connection signal="play_again" from="UI/GameOverScreen" to="." method="_on_GameOverScreen_play_again"]
+[node name="Button" type="Button" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -18.0
+margin_top = -12.0
+margin_right = -20.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="UI/Button" to="." method="_on_Button_pressed"]

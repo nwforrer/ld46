@@ -1,9 +1,11 @@
-extends Area2D
+extends "res://tools/Tool.gd"
+class_name SeedBag
+
+export var crop: PackedScene
 
 
-func _on_FlowerSeedBag_area_entered(area: Area2D) -> void:
-	print('collide')
-
-
-func _on_FlowerSeedBag_area_exited(area: Area2D) -> void:
-	print('end collide')
+func use() -> bool:
+	Signals.emit_signal("tool_used", self, target_position.global_position)
+	call_deferred("emit_signal", "finished_use")
+	return true
+	

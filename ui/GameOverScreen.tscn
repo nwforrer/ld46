@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ui/ui_theme.tres" type="Theme" id=1]
+[ext_resource path="res://ui/GameOverScreen.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.2, 0.152941, 0.152941, 0.690196 )
+
+[node name="GameOverScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 44.0
+margin_top = 26.0
+margin_right = -43.0
+margin_bottom = -26.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 200, 200 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HarvestCount" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 50.0
+margin_right = 200.0
+margin_bottom = 72.0
+text = "You harvested 0 crops"
+
+[node name="DeadCount" type="Label" parent="Panel/VBoxContainer"]
+margin_top = 76.0
+margin_right = 200.0
+margin_bottom = 98.0
+text = "You harvested 0 crops"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 102.0
+margin_right = 200.0
+margin_bottom = 124.0
+
+[node name="ScoreText" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_right = 46.0
+margin_bottom = 22.0
+text = "Score:"
+
+[node name="ScoreValue" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 50.0
+margin_right = 61.0
+margin_bottom = 22.0
+text = "0"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 128.0
+margin_right = 200.0
+margin_bottom = 150.0
+text = "Play again"
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_Button_pressed"]
